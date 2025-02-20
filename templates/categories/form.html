@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} {% if category %} Update Category {% else %} Add Category {% endif %} {% endblock %}
+{% block name %} {% if category %} Update Category {% else %} Add Category {% endif %} {% endblock %}
+
+{% block content %}
+    <!-- Category Form -->
+    <div class="bg-white p-6 rounded-lg shadow-md animate-fadeIn">
+        <form method="post" class="space-y-4" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if category %}
+            <img src="{{ category.image.url }}" alt="{{ category.nam }}">
+            {% endif %}
+            <div class="flex justify-end space-x-4">
+                <a href="{{ request.GET.next|default:'/' }}" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors duration-200">Cancel</a>
+                <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors duration-200">
+                    {% if category %}Update {% else %} Save Category {% endif %}</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
