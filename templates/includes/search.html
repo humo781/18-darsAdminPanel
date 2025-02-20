@@ -1,0 +1,9 @@
+
+<div class="flex flex-wrap gap-4 items-center">
+    <form action="{% url 'categories:list' %}" method="get">
+        <input type="text" name="search" placeholder="Search categories" class="border p-2 rounded">
+        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors duration-200">
+            <i class="fas fa-search mr-2"></i>Search
+        </button>
+    </form>
+</div>
