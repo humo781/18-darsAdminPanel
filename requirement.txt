@@ -39,4 +39,4 @@ validatsiya uchun misol:
 def clean_field_name(self):
      # your logic
 
-product ga keldim
+product list daman
