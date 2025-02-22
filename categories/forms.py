@@ -19,3 +19,4 @@ class CategoryForm(forms.ModelForm):
         if not name.isalpha():
             raise ValidationError('Name must contain only letters.')
         return name
+

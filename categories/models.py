@@ -15,3 +15,6 @@ class Category(models.Model):
 
     def get_delete_url(self):
         return reverse('categories:delete', args=[self.pk])
+
+    def __str__(self):
+        return self.name
